@@ -19,5 +19,6 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 -- THE SOFTWARE.
 
-solution = sum [x | x <- [1..999], x `mod` 3 == 0 || x `mod` 5 == 0]
+fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
+solution = sum $ filter even $ takeWhile (<= 4000000) fibs
 main = print solution
